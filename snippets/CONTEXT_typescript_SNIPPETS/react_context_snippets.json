@@ -1,0 +1,50 @@
+
+        "React custom context": {
+		"prefix": "ReactCtx",
+		"body": [
+			"import { createContext } from 'react';",
+			"",
+			"",
+				"interface ContextProps{",
+				"    ${2:Name}State:boolean,",
+			"}",
+			"",	
+			"export const ${1:Name}Context= createContext({}  as ContextProps);",
+		],
+		"description": "Create react context"
+	},
+
+	"React custom provider": {
+		"prefix": "ReactCtxProvider",
+		"body": [
+			"import { FC, useReducer } from 'react'",
+				"",
+				"export interface UIState{",
+			    "   ${1:name}State:boolean",
+				"}",
+				"interface Props{",
+				"    children: JSX.Element",
+				"}",
+				
+				"const ${3:INITIAL_}STATE: UIState={",
+				"    ${1:name}State:false",
+				"}",
+				
+				
+				"export const ${1:name}Provider:FC<Props> = ({children}) => {",
+				
+				"   const [state, dispatch] = useReducer(reducer, ${3:INITIAL_}STATE)",
+				"",
+				"",
+				"  return (",
+					"<${4:Context}Name.Provider value={{",
+					"   ${1:name}State:false",
+					"}}>",
+						"{children}",
+					"</${4:Context}Name.Provider>",
+				  ")",
+				"}"
+		],
+		"description": "Create react provider"
+    }
+
