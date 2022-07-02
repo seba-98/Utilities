@@ -3,12 +3,13 @@ import React from 'react'
 import { ShopLayout } from '../layouts/ShopLayout';
 import shimmer from '../../styles/shimer.module.css'
 
+//THIS COMPONENT USES mui
+
 export const FullScreenLoading = () => {
 
     const items=[...Array(16)];
 
   return (
-    <ShopLayout title='Loading...' pageDescription='Page loading'>
         <Grid  
         spacing={4}
         container
@@ -24,6 +25,5 @@ export const FullScreenLoading = () => {
                 ))
             }
         </Grid>
-    </ShopLayout>
   )
 }
